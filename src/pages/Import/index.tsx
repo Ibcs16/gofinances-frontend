@@ -35,7 +35,16 @@ const Import: React.FC = () => {
   }
 
   function submitFile(files: File[]): void {
-    // TODO
+    console.log('chamou');
+    const filesToList = files.map<FileProps>(file => ({
+      file,
+      name: file.name,
+      readableSize: file.size.toString(),
+    }));
+
+    console.log(files, filesToList);
+
+    setUploadedFiles([...uploadedFiles, ...filesToList]);
   }
 
   return (

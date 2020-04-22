@@ -22,6 +22,7 @@ export const Container = styled.div<ContainerProps>`
         text-decoration: none;
         font-size: 16px;
         transition: opacity 0.2s;
+        position: relative;
 
         & + a {
           margin-left: 32px;
@@ -29,6 +30,17 @@ export const Container = styled.div<ContainerProps>`
 
         &:hover {
           opacity: 0.6;
+        }
+
+        &.is-active::after {
+          content: '';
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+
+          height: 2px;
+          width: 100%;
+          background: #ff872c;
         }
       }
     }
